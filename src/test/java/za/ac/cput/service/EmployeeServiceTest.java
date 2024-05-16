@@ -20,11 +20,13 @@ class EmployeeServiceTest {
 
     @Autowired
     private EmployeeService employeeService;
-    private Contact contact = ContactFactory.buildContact("lannike@gmail.com", "079 549 9283", "011 398 5555");
-    private Employee employee = EmployeeFactory.buildEmployee(222665093L, "Lannike", "Msitho", contact);
+
+    private final Contact contact = ContactFactory.buildContact("thato@gmail.com", "079 549 9283", "011 398 5555");
+    private final Employee employee = EmployeeFactory.buildEmployee(222665093L, "Thato", "Mokoena", contact);
 
     @Test
     void a_create() {
+        if (employee == null) throw new AssertionError();
         Employee created = employeeService.create(employee);
         assertNotNull(created);
         System.out.println(created);
@@ -39,7 +41,7 @@ class EmployeeServiceTest {
 
     @Test
     void c_update() {
-        Employee newEmployee = new Employee.Builder().copy(employee).setFirstName("Thandiwe").build();
+        Employee newEmployee = new Employee.Builder().copy(employee).setFirstName("Thato Bakoena").build();
         Employee updated = employeeService.update(newEmployee);
         assertNotNull(updated);
         System.out.println(updated);

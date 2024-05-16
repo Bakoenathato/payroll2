@@ -18,14 +18,17 @@ public class EmployeeController {
     public Employee create(@RequestBody Employee employee) {
         return employeeService.create(employee);
     }
+
     @PostMapping("/read/employeenumber")
     public Employee read(@PathVariable Long employeeNumber){
         return employeeService.read(employeeNumber);
     }
+
     @PostMapping("/update")
     public Employee update(@RequestBody Employee employee){
         return employeeService.update(employee);
     }
+
     @PostMapping("/getall")
     public List<Employee> getAll(){
         return employeeService.getAll();

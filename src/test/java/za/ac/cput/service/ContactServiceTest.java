@@ -18,6 +18,7 @@ class ContactServiceTest {
 
     @Autowired
     private ContactService contactService;
+
     private Contact contact = ContactFactory.buildContact("lannike@gmail.com", "079 549 9283", "011 398 5555");
 
     @Test
